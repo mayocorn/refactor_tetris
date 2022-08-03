@@ -86,13 +86,19 @@ t_mino duplicate_mino(t_mino mino)
 
 	new_mino.array = (bool **)malloc(mino.width * sizeof(char *));
 	if (new_mino.array == NULL)
+	{
+		endwin();
 		exit(EXIT_FAILURE);
+	}
 
 	for (int i = 0; i < mino.width; i++)
 	{
 		new_mino.array[i] = (bool *)malloc(mino.width * sizeof(char));
 		if (new_mino.array[i] == NULL)
+		{
+			endwin();
 			exit(EXIT_FAILURE);
+		}
 
 		for (int j = 0; j < mino.width; j++)
 			new_mino.array[i][j] = mino.array[i][j];

@@ -62,3 +62,11 @@ static void terminate_game(t_game_info *game_info)
 	endwin();
 	print_result(game_info);
 }
+
+/*
+static void	destructor(void) __attribute__((destructor));
+static void	destructor(void)
+{
+	system("leaks -q tetris");
+}
+*/

@@ -47,7 +47,7 @@ static void erase_line(t_game_info *game_info, int row)
 
 void printw_table(t_game_info *game_info)
 {
-	bool mino_table[ROW][COLUMN] = {0};
+	bool mino_table[ROW][COLUMN] = {};
 	set_mino_at_table(game_info->current_mino, mino_table);
 
 	clear();

@@ -20,8 +20,10 @@ void erase_line_if_needed(t_game_info *game_info)
 	for (int i = 0; i < ROW; i++)
 	{
 		int cnt = 0;
+
 		for (int j = 0; j < COLUMN; j++)
 			cnt += game_info->table[i][j];
+
 		if (cnt == COLUMN)
 			erase_line(game_info, i);
 	}
@@ -40,7 +42,7 @@ static void erase_line(t_game_info *game_info, int row)
 		game_info->table[0][i] = 0;
 
 	game_info->timelimit -= game_info->decrease;
-	game_info->decrease = (game_info->decrease <= 500) ? 500 : game_info->decrease - 1;
+	game_info->decrease = (game_info->decrease <= 1) ? 1 : game_info->decrease - 1;
 }
 
 void printw_table(t_game_info *game_info)

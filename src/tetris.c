@@ -22,14 +22,14 @@ static void init_game(t_game_info *game_info)
 	timeout(1);
 	init_game_info(game_info);
 	create_new_mino(game_info);
-	print_table(game_info);
+	printw_table(game_info);
 }
 
 static void init_game_info(t_game_info *game_info)
 {
-	for(int i = 0; i < ROW; i++)
+	for (int i = 0; i < ROW; i++)
 	{
-		for(int j = 0; j < COLUMN; j++)
+		for (int j = 0; j < COLUMN; j++)
 			game_info->table[i][j] = 0;
 	}
 	game_info->score = 0;

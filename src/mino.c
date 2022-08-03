@@ -1,7 +1,7 @@
 #include "tetris.h"
 
 #define SHAPE_TYPES 7
-const t_mino shapes[SHAPE_TYPES] =
+static const t_mino shapes[SHAPE_TYPES] =
 {
 	// . # #
 	// # # .
@@ -84,7 +84,7 @@ t_mino duplicate_mino(t_mino mino)
 {
 	t_mino new_mino = mino;
 
-	new_mino.array = (bool **)malloc(mino.width * sizeof(char *));
+	new_mino.array = (bool **)malloc(mino.width * sizeof(bool *));
 	if (new_mino.array == NULL)
 	{
 		endwin();
@@ -93,7 +93,7 @@ t_mino duplicate_mino(t_mino mino)
 
 	for (int i = 0; i < mino.width; i++)
 	{
-		new_mino.array[i] = (bool *)malloc(mino.width * sizeof(char));
+		new_mino.array[i] = (bool *)malloc(mino.width * sizeof(bool));
 		if (new_mino.array[i] == NULL)
 		{
 			endwin();

@@ -44,7 +44,7 @@ t_mino duplicate_mino(t_mino mino);
 void rotate_mino(t_mino mino);
 
 // action.c
-void apply_key_action(t_game_info *game_info, int c);
+void apply_key_action(t_game_info *game_info, int key);
 
 // table.c
 void set_mino_at_table(t_mino mino, bool table[ROW][COLUMN]);

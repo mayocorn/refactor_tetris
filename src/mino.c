@@ -7,47 +7,47 @@ static const t_mino shapes[SHAPE_TYPES] =
 	// # # .
 	// . . .
 	{
-		(bool *[]){(bool[]){0, 1, 1}, (bool[]){1, 1, 0}, (bool[]){0, 0, 0}}, // array
-		3 // width
+		.array = (bool *[]){(bool[]){0, 1, 1}, (bool[]){1, 1, 0}, (bool[]){0, 0, 0}},
+		.width = 3,
 	},
 
 	// # # .
 	// . # #
 	// . . .
 	{
-		(bool *[]){(bool[]){1, 1, 0}, (bool[]){0, 1, 1}, (bool[]){0, 0, 0}},
-		3
+		.array = (bool *[]){(bool[]){1, 1, 0}, (bool[]){0, 1, 1}, (bool[]){0, 0, 0}},
+		.width = 3,
 	},
 
 	// . # .
 	// # # #
 	// . . .
 	{
-		(bool *[]){(bool[]){0, 1, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
+		.array = (bool *[]){(bool[]){0, 1, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
+		.width = 3,
 	},
 
 	// . . #
 	// # # #
 	// . . .
 	{
-		(bool *[]){(bool[]){0, 0, 1}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
+		.array = (bool *[]){(bool[]){0, 0, 1}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
+		.width = 3,
 	},
 
 	// # . .
 	// # # #
 	// . . .
 	{
-		(bool *[]){(bool[]){1, 0, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
+		.array = (bool *[]){(bool[]){1, 0, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
+		.width = 3,
 	},
 
 	// # #
 	// # #
 	{
-		(bool *[]){(bool[]){1, 1}, (bool[]){1, 1}},
-		2
+		.array = (bool *[]){(bool[]){1, 1}, (bool[]){1, 1}},
+		.width = 2,
 	},
 
 	// . . . .
@@ -55,9 +55,9 @@ static const t_mino shapes[SHAPE_TYPES] =
 	// . . . .
 	// . . . .
 	{
-		(bool *[]){(bool[]){0, 0, 0, 0}, (bool[]){1, 1, 1, 1}, 
+		.array = (bool *[]){(bool[]){0, 0, 0, 0}, (bool[]){1, 1, 1, 1}, 
 					(bool[]){0, 0, 0, 0}, (bool[]){0, 0, 0, 0}},
-		4
+		.width = 4,
 	}
 };
 

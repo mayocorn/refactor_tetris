@@ -3,23 +3,23 @@
 static void move_mino(t_game_info *game_info);
 static void fix_mino(t_game_info *game_info);
 
-void apply_key_action(t_game_info *game_info, int c)
+void apply_key_action(t_game_info *game_info, int key)
 {
 	game_info->next_mino = duplicate_mino(game_info->current_mino);
 
-	if (c == 'a') // move left
+	if (key == 'a') // move left
 		game_info->next_mino.pos.col--;
-	else if (c == 's') // move down
+	else if (key == 's') // move down
 		game_info->next_mino.pos.row++;
-	else if (c == 'd') // move right
+	else if (key == 'd') // move right
 		game_info->next_mino.pos.col++;
-	else if (c == 'w') // rotate
+	else if (key == 'w') // rotate
 		rotate_mino(game_info->next_mino);
 
 	// confirm position change
 	if (can_deploy_mino(game_info->table, game_info->next_mino))
 		move_mino(game_info);
-	else if (c == 's')
+	else if (key == 's')
 		fix_mino(game_info);
 	else
 		delete_mino(game_info->next_mino);

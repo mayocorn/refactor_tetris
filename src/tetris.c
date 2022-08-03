@@ -45,9 +45,9 @@ static void play_game(t_game_info *game_info)
 {
 	while (game_info->gameon)
 	{
-		int c = getch();
-		if (c != ERR)
-			apply_key_action(game_info, c);
+		int key = getch();
+		if (key != ERR)
+			apply_key_action(game_info, key);
 		if (is_passed_turn_time(game_info))
 		{
 			apply_key_action(game_info, 's');

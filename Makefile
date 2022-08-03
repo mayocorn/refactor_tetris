@@ -8,12 +8,13 @@ OBJS    = $(addprefix $(OBJDIR), $(SRCS:%.c=%.o))
 DEPS    = $(OBJS:%.o=%.d)
 
 CC      = gcc
+CFLAGS  = -Wall -Wextra -Werror
 INCLUDE = -I./include/
 LIBS    = -lncurses
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@mkdir -p $(dir $@)
-	$(CC) -MMD -MP $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) -MMD -MP $(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $@

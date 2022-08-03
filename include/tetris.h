@@ -24,66 +24,6 @@ typedef struct
 	t_mino_position pos;
 } t_mino;
 
-const t_mino shapes[7] =
-{
-	// . # #
-	// # # .
-	// . . .
-	{
-		(bool *[]){(bool[]){0, 1, 1}, (bool[]){1, 1, 0}, (bool[]){0, 0, 0}}, // array
-		3 // width
-	},
-
-	// # # .
-	// . # #
-	// . . .
-	{
-		(bool *[]){(bool[]){1, 1, 0}, (bool[]){0, 1, 1}, (bool[]){0, 0, 0}},
-		3
-	},
-
-	// . # .
-	// # # #
-	// . . .
-	{
-		(bool *[]){(bool[]){0, 1, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
-	},
-
-	// . . #
-	// # # #
-	// . . .
-	{
-		(bool *[]){(bool[]){0, 0, 1}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
-	},
-
-	// # . .
-	// # # #
-	// . . .
-	{
-		(bool *[]){(bool[]){1, 0, 0}, (bool[]){1, 1, 1}, (bool[]){0, 0, 0}},
-		3
-	},
-
-	// # #
-	// # #
-	{
-		(bool *[]){(bool[]){1, 1}, (bool[]){1, 1}},
-		2
-	},
-
-	// . . . .
-	// # # # #
-	// . . . .
-	// . . . .
-	{
-		(bool *[]){(bool[]){0, 0, 0, 0}, (bool[]){1, 1, 1, 1}, 
-					(bool[]){0, 0, 0, 0}, (bool[]){0, 0, 0, 0}},
-		4
-	}
-};
-
 typedef struct
 {
 	bool table[ROW][COLUMN];
@@ -113,7 +53,7 @@ void printw_table(t_game_info *game_info);
 void print_result(t_game_info *game_info);
 
 // judge.c
-bool can_deploy_mino(t_game_info *game_info);
+bool can_deploy_mino(bool table[ROW][COLUMN], t_mino mino);
 bool is_passed_turn_time(t_game_info *game_info);
 
 #endif

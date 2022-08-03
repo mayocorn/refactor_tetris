@@ -16,7 +16,8 @@ void apply_key_action(t_game_info *game_info, int c)
 	else if (c == 'w') // rotate
 		rotate_mino(game_info->next_mino);
 
-	if (can_deploy_mino(game_info->table, game_info->next_mino)) // confirm position change
+	// confirm position change
+	if (can_deploy_mino(game_info->table, game_info->next_mino))
 		move_mino(game_info);
 	else if (c == 's')
 		fix_mino(game_info);
